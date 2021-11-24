@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { UserContext } from "../../context/context";
 
 const Dashboard = () => {
-    return (
-        <div>
-            this is dashboard
-        </div>
-    )
-}
+  const context = useContext(UserContext);
 
-export default Dashboard
+  console.log(context);
+  return <div>this is dashboard</div>;
+};
+
+export default Dashboard;

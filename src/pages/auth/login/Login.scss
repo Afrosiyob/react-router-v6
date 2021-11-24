@@ -1,0 +1,24 @@
+
+
+.login-box {
+    width: 100%;
+    height: 100vh;
+    
+    .left-login-box {
+        background-color: #1890ff;
+    }
+
+    .right-login-box {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+
+        .login-submit-button {
+            width: 100%;
+        }
+    }
+    
+}

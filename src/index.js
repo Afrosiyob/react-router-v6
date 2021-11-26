@@ -1,12 +1,19 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import { AuthProvider } from "./provider/provider";
+
 import reportWebVitals from "./reportWebVitals";
+
+const AppLazy = lazy(() => import("./App"));
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AuthProvider>
+      <Suspense fallback={<div> loading... </div>}>
+        <AppLazy />
+      </Suspense>
+    </AuthProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

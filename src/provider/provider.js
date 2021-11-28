@@ -4,23 +4,23 @@ import { AuthContext } from "../context/context";
 
 const queryClient = new QueryClient();
 
-export const QueryProvider = ({ children }) => {
+export const QueryProvider = ( { children } ) => {
   return (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    <QueryClientProvider client={ queryClient }>{ children }</QueryClientProvider>
   );
 };
 
-export const AuthProvider = ({ children }) => {
-  const [auth, setAuth] = useState(null);
+export const AuthProvider = ( { children } ) => {
+  const [ auth, setAuth ] = useState( null );
 
   return (
-    <AuthContext
-      value={{
+    <AuthContext.Provider
+      value={ {
         auth,
         setAuth,
-      }}
+      } }
     >
-      {children}
-    </AuthContext>
+      { children }
+    </AuthContext.Provider>
   );
 };

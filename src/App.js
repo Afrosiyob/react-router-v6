@@ -1,35 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
-import { BrowserRouter, Switch, Routes, Navigate, Route } from 'react-router-dom';
+import "./App.css";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  Link,
+  Outlet,
+} from "react-router-dom";
 
+const AuthPage = () => {
+  return <div>this is auth page</div>;
+};
 
-
-const Admin = () => {
+const AdminPage = () => {
   return (
     <div>
-      this is admin page
+      <Link to="/admin/page-one"> page one </Link>
+      <Link to="/admin/page-two"> page two </Link>
+      <Outlet />
     </div>
-  )
-}
+  );
+};
 
-const Auth = () => {
-  return (
-    <div>
-      this is auth page
-    </div>
-  )
-}
+const PageOne = () => {
+  return <div>page one</div>;
+};
+const PageTwo = () => {
+  return <div>page two</div>;
+};
 
-
-
-
-function App () {
+function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={ <Navigate to="/admin" /> } />
-        <Route path="/admin" element={ <Admin /> } />
-        <Route path="/auth" element={ <Auth /> } />
+        <Route path="admin" element={<AdminPage />}>
+          <Route index element={<Navigate to="/admin/page-one" />} />
+          <Route path="page-one" element={<PageOne />} />
+          <Route path="page-two" element={<PageTwo />} />
+        </Route>
+        <Route path="auth" element={<AuthPage />} />
+        <Route path="*" element={<Navigate to="/admin" />} />
       </Routes>
     </BrowserRouter>
   );

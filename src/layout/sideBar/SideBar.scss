@@ -1,0 +1,47 @@
+.ant-menu {
+  border-right: none;
+  padding: 10px;
+  background-color: transparent;
+  .ant-menu-sub {
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  a {
+    color: white !important;
+  }
+  span {
+    color: white;
+  }
+  .ant-menu-submenu-arrow {
+    color: white !important;
+  }
+  .ant-menu-item {
+    border-radius: 6px;
+  }
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.ant-menu-vertical .ant-menu-item::after,
+.ant-menu-vertical-left .ant-menu-item::after,
+.ant-menu-vertical-right .ant-menu-item::after,
+.ant-menu-inline .ant-menu-item::after {
+  // border-right: 3px solid white;
+  border-right: none;
+}
+
+.user-box {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  line-height: 15px;
+  .user-name {
+    font-weight: bold;
+    color: white;
+  }
+  .user-role {
+    color: white;
+  }
+}

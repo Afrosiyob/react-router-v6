@@ -3,14 +3,13 @@ import { Button, Checkbox, Col, Form, Input, Row } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { useMutation } from "react-query";
 import { loginApi } from "../../service/api.service";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import "./Auth.scss";
+import { notificationMessage } from "../../components/NotificationMessage";
 
 const Auth = () => {
   const [loading, setLoading] = useState(false);
-  let location = useLocation();
-  console.log(location);
 
   let navigate = useNavigate();
 
@@ -24,6 +23,7 @@ const Auth = () => {
     },
     onError: (error, variables, context) => {
       // An error happened!
+      notificationMessage("error", "Auth error", error.response.data);
       setLoading(false);
     },
     onSuccess: (data, variables, context) => {
@@ -34,6 +34,7 @@ const Auth = () => {
       } = data;
       localStorage.setItem("accessToken", accessToken);
       localStorage.setItem("refreshToken", refreshToken);
+      notificationMessage("success", "Success", "Welcome React Admin");
       setLoading(false);
       navigate("/");
     },

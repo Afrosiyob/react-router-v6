@@ -1,0 +1,10 @@
+.user-box {
+  display: flex;
+  flex-direction: column;
+  line-height: 15px;
+  .user-name,
+  .user-role {
+    color: black;
+    font-weight: bold;
+  }
+}

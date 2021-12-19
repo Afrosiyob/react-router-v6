@@ -7,19 +7,19 @@ import {
   // Tooltip,
   Menu,
   Button,
-  Badge,
+  // Badge,
   Dropdown,
 } from "antd";
 
 import {
   LogoutOutlined,
-  SettingOutlined,
-  NotificationOutlined,
+  // SettingOutlined,
+  // NotificationOutlined,
 } from "@ant-design/icons";
 
 import "./TopBar.scss";
-import { Link } from "react-router-dom";
-import BtnPrimary from "../../components/btnPrimary/BtnPrimary";
+// import { Link } from "react-router-dom";
+// import BtnPrimary from "../../components/btnPrimary/BtnPrimary";
 
 function TopBar() {
   // const { i18n, t } = useTranslation();

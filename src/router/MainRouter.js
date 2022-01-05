@@ -11,10 +11,10 @@ const MainRouter = () => {
     <>
       <BrowserRouter>
         <Routes>
-          {/* main index "/" */}
-          <Route index element={<Navigate to="/admin" />} />
-
-          {/* admin page "/admin" */}
+          {" "}
+          {/* main index "/" */}{" "}
+          <Route index element={<Navigate to="/admin" />} />{" "}
+          {/* admin page "/admin" */}{" "}
           <Route
             path="admin"
             element={
@@ -23,17 +23,14 @@ const MainRouter = () => {
               </ProtectedRoute>
             }
           >
-            <Route index element={<Navigate to="/admin/page-one" />} />
-            <Route path="page-one" element={<PageOne />} />
-            <Route path="page-two" element={<PageTwo />} />
-          </Route>
-
-          {/* auth page  */}
-          <Route path="auth" element={<Auth />} />
-
-          <Route path="*" element={<Navigate to="/admin" />} />
-        </Routes>
-      </BrowserRouter>
+            <Route index element={<Navigate to="/admin/page-one" />} />{" "}
+            <Route path="page-one" element={<PageOne />} />{" "}
+            <Route path="page-two" element={<PageTwo />} />{" "}
+          </Route>{" "}
+          {/* auth page  */} <Route path="auth" element={<Auth />} />{" "}
+          <Route path="*" element={<Navigate to="/admin" />} />{" "}
+        </Routes>{" "}
+      </BrowserRouter>{" "}
     </>
   );
 };
